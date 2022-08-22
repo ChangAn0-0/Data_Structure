@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Chapter_One.c">
+    <ClCompile Include="Maximum_subcolumn_sum.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
