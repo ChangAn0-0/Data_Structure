@@ -139,8 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Balanced_Binary_Tree.c" />
-    <ClCompile Include="binary_search_tree.c" />
+    <ClCompile Include="MaxHeap.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
