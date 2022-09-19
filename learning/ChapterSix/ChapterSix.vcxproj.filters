@@ -21,5 +21,8 @@
     <ClCompile Include="adjacency_matrix.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="prim_list.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

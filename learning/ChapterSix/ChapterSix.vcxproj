@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="adjacency_list.c" />
     <ClCompile Include="adjacency_matrix.c" />
+    <ClCompile Include="prim_list.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
