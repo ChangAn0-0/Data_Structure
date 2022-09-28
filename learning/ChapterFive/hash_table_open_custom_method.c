@@ -51,9 +51,55 @@ typedef Index Position;
 	 return H;
  }
 //------------------初始化完成--------------------
-//--------------------平方探测法插入函数-------------------
+ //--------------------hash函数------------------
+ int Hash(const char* key, int tablesize)
+ {
+	 unsigned int h = 0;
+	 while (*key != '\0') {
+		 h = (h << 5) + *key++;
+	 }
+
+	 return h % tablesize;
+ }
+
+
+ //-----------------平方探测法查找函数---------------------
+ Position Find(HashTable H, ElementType key)
+ {
+	 Position CurrentPos, NewPos;
+	 int CNum = 0;
+
+	 NewPos = CurrentPos = Hash(key, H->TableSize);
+	 while (H->Cells[NewPos].Info != Empty && H->Cells[NewPos].Data != key) {
+		 if (++CNum % 2) {
+			 NewPos = CurrentPos + (CNum + 1) * (CNum + 1) / 4;
+			 if (NewPos >= H->TableSize)
+				 NewPos = NewPos % H->TableSize;
+		 }
+		 else {
+			 NewPos = CurrentPos - CNum * CNum / 4;
+			 while (NewPos < 0)
+				 NewPos += H->TableSize;
+		 }
+	 }
+
+	 return NewPos;
+ }
+ 
+
+ //--------------------平方探测法插入函数-------------------
  bool Insert(HashTable H, ElementType key)
  {
+	 Position pos = Find(H, key);
+	 if (H->Cells[pos].Info != Legitimate) {
+		 H->Cells[pos].Info = Legitimate;
+		 H->Cells[pos].Data = key;
 
+		 return true;
+	 }
+	 else {
+		 printf("error:The key value already exists\n");
+		 return false;
+	 }
  }
 
