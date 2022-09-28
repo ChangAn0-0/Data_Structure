@@ -101,7 +101,7 @@ bool Insert(HashTable H, ElementType key)
 		return false;
 	}
 }
-
+//Ïú»ÙÉ¢ÁĞ±í
 void DestroyTable(HashTable H)
 {
 	int i;
